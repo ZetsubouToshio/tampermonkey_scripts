@@ -12,27 +12,33 @@
 // ==/UserScript==
 
 (function () {
-  'use strict';
+    'use strict';
 
-  // Your code here...
-  let authors = ["Ladkor", ">>DEAN<<", "Dmitry Reed", "KOLOK.ORG", "ЕНК", "igokrut", "GUITAR-SALE.RU", "Guitares.ru", "GreenRV"];
-  let keywords = ["gibson", "Gibson", "GIBSON", "fender", "Fender", "FENDER", "suhr", "Suhr", "SUHR", "anderson", "Anderson", "ANDERSON"]
-  let second_wave = ["hamer", "Hamer", "HAMER"]
+    $.expr[":"].contains = $.expr.createPseudo(function(arg) {
+        return function( elem ) {
+            return $(elem).text().toUpperCase().indexOf(arg.toUpperCase()) >= 0;
+        };
+    });
 
-  let num = 0;
-  for (let i = 0; i <= authors.length; i++) {
-    let $a = $("tr strong a:contains('" + authors[i] + "')").parents("tr").remove();
-    num += $a.length;
-  }
-  console.log("Заблокировано " + num + " строк");
+    // Your code here...
+    let authors = ["Ladkor", ">>DEAN<<", "Dmitry Reed", "KOLOK.ORG", "ЕНК", "igokrut", "GUITAR-SALE.RU", "Guitares.ru", "GreenRV"];
+    let keywords = ["gibson", "fender", "suhr", "anderson"]
+    let second_wave = ["hamer", "ibanez"]
 
-  $(".stats.windowbg:contains('	0')").parents("tr").find("td").css("background-color", "#d4f1c5");
+    let num = 0;
+    for (let i = 0; i <= authors.length; i++) {
+        let $a = $("tr strong a:contains('" + authors[i] + "')").parents("tr").remove();
+        num += $a.length;
+    }
+    console.log("Заблокировано " + num + " строк");
 
-  for (let i = 0; i <= keywords.length; i++) {
-    $("a:contains('" + keywords[i] + "')").css("color", "red");
-  }
+    $(".stats.windowbg:contains('	0')").parents("tr").find("td").css("background-color", "#d4f1c5");
 
-  for (let i = 0; i <= second_wave.length; i++) {
-    $("a:contains('" + second_wave[i] + "')").css("color", "orange");
-  }
+    for (let i = 0; i <= keywords.length; i++) {
+        $("a:contains('" + keywords[i] + "')").css("color", "red");
+    }
+
+    for (let i = 0; i <= second_wave.length; i++) {
+        $("a:contains('" + second_wave[i] + "')").css("color", "orange");
+    }
 })();
