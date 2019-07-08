@@ -26,7 +26,7 @@
   }
   console.log("Заблокировано " + num + " строк");
 
-  $(".stats.windowbg:contains('  0 Ответов')").parents("tr").find("td").css("background-color", "#d4f1c5");
+  $(".stats.windowbg:contains('	0')").parents("tr").find("td").css("background-color", "#d4f1c5");
 
   for (let i = 0; i <= keywords.length; i++) {
     $("a:contains('" + keywords[i] + "')").css("color", "red");
