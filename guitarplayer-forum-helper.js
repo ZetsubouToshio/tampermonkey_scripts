@@ -4,7 +4,7 @@
 // @version      0.3.1
 // @description  try to take over the world!
 // @author       ZetsubouToshio
-// @match        https://forum.guitarplayer.ru/index.php?board=20.*
+// @match        https://guitarplayer.ru/commerce-instruments/*
 // @grant        none
 // @copyright 2018, zetsuboutoshio (https://openuserjs.org//users/zetsuboutoshio)
 // @license Apache-2.0
