@@ -21,7 +21,7 @@
     });
 
     // Your code here...
-    let authors = ["Ladkor", ">>DEAN<<", "Dmitry Reed", "KOLOK.ORG", "ЕНК", "igokrut", "GUITAR-SALE.RU", "Guitares.ru", "GreenRV"];
+    let authors = ["Ladkor", ">>DEAN<<", "KOLOK.ORG", "ЕНК", "igokrut", "GUITAR-SALE.RU", "Guitares.ru", "GreenRV"];
     let keywords = ["gibson", "fender", "suhr", "anderson"]
     let second_wave = ["hamer", "ibanez"]
 
